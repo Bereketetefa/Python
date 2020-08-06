@@ -1,0 +1,28 @@
+8)
+User.objects.create(firstname = 'asap', lastname = 'rocky', email = 'rocky@gmail.com', age = 28)
+User.objects.create(firstname = 'travis', lastname = 'scott', email = 'sickiomode@gmail.com', age = 26)
+User.objects.create(firstname = 'whole', lastname = 'work', email = 'mode@gmail.com', age = 20)
+
+9)
+User.objects.all()
+
+10)
+User.objects.last()
+
+11)
+User.object.first()
+
+12)
+UserUpdate = User.objects.get(id=3)
+UserUpdate.lastname = "Pancakes"
+UserUpdate.save()
+
+13)
+UserUpdate = User.objects.get(id=2)
+UserUpdate.delete()
+
+14)
+user.objects.filter(firstname="burk").delete()
+someuser + user.objects.get(firstname="burk")
+someuser.delete()
+

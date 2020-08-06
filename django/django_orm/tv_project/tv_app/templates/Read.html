@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tv project</title>
+	<style>
+		table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+		}
+		td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+		}
+		tr:nth-child(even) {
+		background-color: #dddddd;
+		}
+	</style>
+</head>
+<body>
+	<h1> Tv Show {{tvshow.id}}</h1>
+		<p>Title: {{tvshow.title}}</p>
+		<p>Network: {{tvshow.Network}}</p>
+		<p>Release: {{tvshow.Release}}</p>
+		<p>Description: {{tvshow.desc}}</p>
+		<p>Last Updated:{{tvshow.updated_at}}</p>
+	<td>
+		<a href="/shows/{{dates.id}}/edit">Edit</a>
+		<a href="/shows/{{dates.id}}/destroy">Delete</a>
+	</td>
+		</body>
+		</html>

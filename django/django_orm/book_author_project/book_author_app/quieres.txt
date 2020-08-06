@@ -1,0 +1,106 @@
+5)
+Book.objects.create(title = 'C Sharp')
+Book.objects.create(title = 'Java')
+Book.objects.create(title = 'Python')
+Book.objects.create(title = 'PHP')
+Book.objects.create(title = 'Ruby')
+
+6)
+Author.objects.create(first_name = 'Jane', last_name = 'Austen')
+Author.objects.create(first_name = 'Emily', last_name = 'Dickinson')
+Author.objects.create(first_name = 'Fyodor', last_name = 'Dosoevsky')
+Author.objects.create(first_name = 'William', last_name = 'Shakerspeare')
+Author.objects.create(first_name = 'Lau', last_name = 'Tzu')
+
+9)
+UserUpdate = books.objects.get(id=1)
+UserUpdate.title = "c#"
+UserUpdate.save()
+
+10)
+author4 = authors.objects.get(id=4)
+UserUpdate.first_name = "bill"
+UserUpdate.save()
+
+11)
+author1 = authors.objects.get(id=1)
+UserUpdate1 = books.objects.get(id=1)
+UserUpdate2 = books.objects.get(id=2)
+UserUpdate.author.add(UserUpdate1)
+UserUpdate.author.add(UserUpdate2)
+
+12)
+author2 = authors.objects.get(id=2)
+UserUpdate1 = books.objects.get(id=1)
+UserUpdate2 = books.objects.get(id=2)
+UserUpdate3 = books.objects.get(id=3)
+UserUpdate.author.add(UserUpdate1)
+UserUpdate.author.add(UserUpdate2)
+UserUpdate.author.add(UserUpdate3)
+
+13)
+author3 = authors.objects.get(id=3)
+UserUpdate1 = books.objects.get(id=1)
+UserUpdate2 = books.objects.get(id=2)
+UserUpdate3 = books.objects.get(id=3)
+UserUpdate4 = books.objects.get(id=4)
+UserUpdate.author.add(UserUpdate1)
+UserUpdate.author.add(UserUpdate2)
+UserUpdate.author.add(UserUpdate3)
+UserUpdate.author.add(UserUpdate4)
+
+14)
+author4 = authors.objects.get(id=4)
+UserUpdate1 = books.objects.get(id=1)
+UserUpdate2 = books.objects.get(id=2)
+UserUpdate3 = books.objects.get(id=3)
+UserUpdate4 = books.objects.get(id=4)
+UserUpdate4 = books.objects.get(id=5)
+UserUpdate.author.add(UserUpdate1)
+UserUpdate.author.add(UserUpdate2)
+UserUpdate.author.add(UserUpdate3)
+UserUpdate.author.add(UserUpdate4)
+UserUpdate.author.add(UserUpdate5)
+
+13)
+UserUpdate3.author.all()
+
+14)
+c = UserUpdate1.authors.get(id=1)
+c.delete()
+
+15)
+author5 = authors.objects.get(id=5)
+UserUpdate2.author.add(author5)
+
+16)
+books.objects.filter(author=author3)
+
+
+    # update = models.ManyToManyField(Book, related_name="author")
+
+
+
+views:
+from django.shortcuts import render, HttpResponse
+# from .models import books
+
+def index(request):
+    return render(request,"index.html")
+
+
+
+
+models:
+from django.db import models
+
+# class books(models.Model):
+#     title = models.CharField(max_length=255)
+#     desc = models.TextField( max_length=255)
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
+
+
+
+course = books
+students = author

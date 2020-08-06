@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>Document</title>
+	<style>
+		.bottom{
+			display: flex;
+		}
+		.container{
+			display: flex;
+		}
+		.Quotable{
+			width: 50%;
+			height: 220px;
+			width: 421px;
+			background: {{change}};
+			display: inline-block;
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+		td{
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Welcome, {{loggedinUser.email}}</h1>
+	<a href='/logout'>Logout</a>
+	<div class="container">
+		<div class="Quotable">
+			<table>
+				<h4>Quotable Quotes</h4>
+					{% for post in all_posts %}
+					<tr>
+						<td>
+							{% if post.user.id == loggedinUser.id %}
+								<div>
+									<a href="/quotes/{{post.id}}">Edit</a>
+									<a href="/quotes/{{post.id}}/delete">Delete</a>
+								</div>
+							{% endif %} 
+							{{post.quoted_by}}: {{post.post}}
+							<div class="bottom"> <P>Posted by <a href="/users/{{post.user.id}}"> {{post.user.email}}</a>
+								<form action="/addfavorite" method='post'>
+									{% csrf_token %}
+									<button class="button" name ='post_id' value="{{post.id}}" type="submit">Add to favorites</button> 
+								</form>
+								</P>
+							</div>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+		<div class="favorites">
+			<table>
+				<h4>Your Favorites</h4>
+					{% for favorite in favorites %}
+					<tr>
+						<td>
+							{{favorite.post.quoted_by}}: {{favorite.post.post}}
+							<div class="bottom">
+								<P>Posted by <a href="/users/{{favorite.user.id}}"> {{favorite.user.email}}</a>
+									<form action="/delfavorite" method='post'>
+										{% csrf_token %}
+										<button class="button" name ='post_id' value="{{favorite.id}}" type="submit">Remove from Favorites</button> 
+									</form>
+								</P>
+							</div>	
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+			<div class="cont">
+				<h2>contribute a Quote</h2>
+				<form action= '/contquote' method='post'>
+					{% csrf_token %}
+					<p>Quoted By: <input type="text" name="quotedby" id="" ></p>
+					Message: <textarea name="quote" id="" cols="30" rows="10"></textarea> 
+					<p><input type="submit" value="submit"></p>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

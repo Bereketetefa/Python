@@ -1,0 +1,80 @@
+5)
+books.objects.create(title = 'C Sharp')
+books.objects.create(title = 'Java')
+books.objects.create(title = 'Python')
+books.objects.create(title = 'PHP')
+books.objects.create(title = 'Ruby')
+
+6)
+authors.objects.create(first_name = 'Jane', last_name = 'Austen')
+authors.objects.create(first_name = 'Emily', last_name = 'Dickinson')
+authors.objects.create(first_name = 'Fyodor', last_name = 'Dosoevsky')
+authors.objects.create(first_name = 'William', last_name = 'Shakerspeare')
+authors.objects.create(first_name = 'Lau', last_name = 'Tzu')
+
+9)
+UserUpdate = books.objects.get(id=1)
+UserUpdate.title = "c#"
+UserUpdate.save()
+
+10)
+author4 = authors.objects.get(id=4)
+UserUpdate.first_name = "bill"
+UserUpdate.save()
+
+11)
+author1 = authors.objects.get(id=1)
+UserUpdate1 = books.objects.get(id=1)
+UserUpdate2 = books.objects.get(id=2)
+UserUpdate.author.add(UserUpdate1)
+UserUpdate.author.add(UserUpdate2)
+
+12)
+author2 = authors.objects.get(id=2)
+UserUpdate1 = books.objects.get(id=1)
+UserUpdate2 = books.objects.get(id=2)
+UserUpdate3 = books.objects.get(id=3)
+UserUpdate.author.add(UserUpdate1)
+UserUpdate.author.add(UserUpdate2)
+UserUpdate.author.add(UserUpdate3)
+
+13)
+author3 = authors.objects.get(id=3)
+UserUpdate1 = books.objects.get(id=1)
+UserUpdate2 = books.objects.get(id=2)
+UserUpdate3 = books.objects.get(id=3)
+UserUpdate4 = books.objects.get(id=4)
+UserUpdate.author.add(UserUpdate1)
+UserUpdate.author.add(UserUpdate2)
+UserUpdate.author.add(UserUpdate3)
+UserUpdate.author.add(UserUpdate4)
+
+14)
+author4 = authors.objects.get(id=4)
+UserUpdate1 = books.objects.get(id=1)
+UserUpdate2 = books.objects.get(id=2)
+UserUpdate3 = books.objects.get(id=3)
+UserUpdate4 = books.objects.get(id=4)
+UserUpdate4 = books.objects.get(id=5)
+UserUpdate.author.add(UserUpdate1)
+UserUpdate.author.add(UserUpdate2)
+UserUpdate.author.add(UserUpdate3)
+UserUpdate.author.add(UserUpdate4)
+UserUpdate.author.add(UserUpdate5)
+
+13)
+UserUpdate3.author.all()
+
+14)
+c = UserUpdate1.authors.get(id=1)
+c.delete()
+
+15)
+author5 = authors.objects.get(id=5)
+UserUpdate2.author.add(author5)
+
+16)
+books.objects.filter(author=author3)
+
+
+    # update = models.ManyToManyField(Book, related_name="author")

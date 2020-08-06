@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ninja gold</title>
+    <style>
+    .places{
+        border: 1px salmon;
+        display: inline-block;
+        margin: 15px;
+        width: 100;
+        height: 100;
+    }
+    /* h2{
+
+    }
+    form{
+
+    } */
+    </style>
+</head>
+<body>
+    <p>your gold{{}}</p>
+    <div class="places">
+        <h3>Farm</h3>
+        <p>(earns 10-20 gold)</p>
+        <form action="/find_gold" method="post">
+            {%csrf_token%}
+            <input type="hidden" name="show" value="Find Gold">
+            <input type="submit" value="Farm">
+        </form>
+    </div>
+    <p>your gold</p>
+    <div class="places">
+        <h3>Farm</h3>
+        <p>(earns 5-10 gold)</p>
+        <form action="/find_gold" method="post">
+            {%csrf_token%}
+            <input type="hidden" name="show" value="Find Gold">
+            <input type="submit" value="Farm">
+        </form>
+    </div><p>your gold</p>
+    <div class="places">
+        <h3>Farm</h3>
+        <p>(earns 2-5 gold)</p>
+        <form action="/find_gold" method="post">
+            {%csrf_token%}
+            <input type="hidden" name="show" value="Find Gold">
+            <input type="submit" value="Farm">
+        </form>
+    </div><p>your gold</p>
+    <div class="places">
+        <h3>Farm</h3>
+        <p>(earns 0-50 gold)</p>
+        <form action="/find_gold" method="post">
+            {%csrf_token%}
+            <input type="hidden" name="show" value="Find Gold">
+            <input type="submit" value="Farm">
+        </form>
+    </div>
+    <div>
+
+
+    </div>
+
+
+
+
+
+
+
+    </div>
+    <h1>Ninja Gold</h1>
+    <p>Farm</p>
+    <form action="/find_gold" method="post">
+        {%csrf_gold%}
+        <input type="hidden" name="show" value="Farm">
+        <input type="submit" value="Farm">
+    </form>
+
+    <p>Cave</p>
+    <form action="/find_gold" method="post">
+        {%csrf_gold%}
+        <input type="hidden" name="show" value="Cave">
+        <input type="submit" value="Cave">
+    </form>
+
+    <P>House</P>
+    <form action="/find_gold" method="post">
+        {%csrf_gold%}
+        <input type="hidden" name="show" value="House">
+        <input type="submit" value="House">
+    </form>
+
+    <p>Casino</p>
+    <form action="/find_gold" method="post">
+        {%csrf_gold%}
+        <input type="hidden" name="show" value="Casino">
+        <input type="submit" value="Casino">
+    </form>
+
+
+    <h2>Results</h2>
+    <p>Farm: {{request.session.Farm}}</p>
+    <p>Cave: {{request.session.Cave}}</p>
+    <p>House: {{request.session.House}}</p>
+    <p>Casino: {{request.session.Casino}}</p>
+
+
+
+</body>
+</html>

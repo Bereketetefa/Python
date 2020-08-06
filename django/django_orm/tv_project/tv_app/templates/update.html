@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <a href="/shows/">Go Back</a>
+    <br><br> -->
+    <h1>Edit Show {{editshow.id}}</h1>
+    {% if messages %}
+        {% for message in messages %}
+        <p>{{message}}</p>
+        {% endfor %}
+    {% endif %} 
+    <form action= '/shows/{{editshow.id}}/update' method='post'>
+        {% csrf_token %}
+        <p>Title: <input type="text" name="nombre" id="" value="{{editshow.title}}"></p>
+        <p>Network: <input  type= 'desc' id='netname' name="net" value="{{editshow.network}}"></p>
+        <p>Release Date:<input type= "date" id="name" name="rel" placeholder="{{editshow.release}}"></p>
+        <p>Description:<input  type= 'desc' id='datename' name="description" cols='38' rows='10' value="{{editshow.desc}}"></p>
+        <p><input type="submit" value="Update"></p>
+    </form>
+</body>
+</html>

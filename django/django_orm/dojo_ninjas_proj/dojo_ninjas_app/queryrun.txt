@@ -1,0 +1,54 @@
+1)
+dojos.objects.create(name = 'Arlington campus', city = 'Arlington', state = 'Virginia')
+dojos.objects.create(name = 'Los Angeles campus', city = 'Los Angeles', state = 'California')
+dojos.objects.create(name = 'Silicon Valley campus', city = 'San Jose', state = 'California')
+
+2)
+dojos.objects.get(name = 'Arlington campus', city = 'Arlington', state = 'Virginia').delete()
+dojos.objects.get(name = 'Los Angeles campus', city = 'Los Angeles', state = 'California').delete()
+dojos.objects.get(name = 'Silicon Valley campus', city = 'San Jose', state = 'California').delete()
+
+3)
+dojos.objects.create(name = 'Seattle campus', city = 'Seattle', state = 'Washington state')
+dojos.objects.create(name = 'Tulsa campus', city = 'Tulsa', state = 'oklahoma')
+dojos.objects.create(name = 'Oakland campus', city = 'Oakland', state = 'California')
+
+4)
+ninja.objects.get(first_name = 'burk', last_name = 'etefa').delete()
+ninja.objects.get(first_name = 'adam', last_name = 'sandler').delete()
+ninja.objects.get(first_name = 'chris', last_name = 'rock').delete()
+
+5)
+ninja.objects.create(first_name = 'lil', last_name = 'jon', dojos = dojos.objects.get(id=8))
+ninja.objects.create(first_name = 'tom', last_name = 'frank', dojos = dojos.objects.get(id=9))
+ninja.objects.create(first_name = 'luke', last_name = 'skywalker', dojos = dojos.objects.get(id=10))
+
+6)
+ninja.objects.create(first_name = 'flo', last_name = 'rogressive', dojos = dojos.objects.get(id=8))
+ninja.objects.create(first_name = 'tony', last_name = 'hawk', dojos = dojos.objects.get(id=9))
+ninja.objects.create(first_name = 'kool', last_name = 'aid', dojos = dojos.objects.get(id=10))
+
+7)
+ninja.objects.create(first_name = 'burk', last_name = 'etefa', dojos = dojos.objects.get(id=8))
+ninja.objects.create(first_name = 'adam', last_name = 'sandler', dojos = dojos.objects.get(id=9))
+ninja.objects.create(first_name = 'chris', last_name = 'rock', dojos = dojos.objects.get(id=10))
+
+8)
+dojos.objects.first().dojos.all()
+
+9)
+dojos.objects.last().dojos.all()
+
+10)
+ninja.objects.last().dojos
+
+11)
+desc = models.TextField()
+
+12)
+python manage.py makemigrations
+python manage.py migrate
+
+13)
+dojos.objects.create(name = 'Chicago campus', city = 'Chicago', state = 'Illinois')
+

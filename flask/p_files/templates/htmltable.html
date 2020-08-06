@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table</title> 
+    <style>
+      table, th, td {
+      border: 1px solid black;
+      }
+      table#t01 {
+      width: 100%;
+      background-color: #f1f1c1;
+      }
+    </style>
+</head>
+<body>
+    <table class="table table-hover table-dark">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Full Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for x in users: %}
+          <tr>
+            <th scope="row"></th>
+            <td>Michael</td>
+            <td>Choi</td>
+            <td>Michael Choi</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>John</td>
+            <td>Supsupin</td>
+            <td>John Supsupin</td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>Mark </td>
+            <td>Guillen</td>
+            <td>Mark Guillen</td>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"></th>
+            <td>KB</td>
+            <td>Tonel</td>
+            <td>KB Tonel</td>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</body>
+</html>
+
+<!-- 
+# users = [
+#    {'first_name' : 'Michael', 'last_name' : 'Choi'},
+#    {'first_name' : 'John', 'last_name' : 'Supsupin'},
+#    {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+#    {'first_name' : 'KB', 'last_name' : 'Tonel'}
+# ]
+# print(users) -->

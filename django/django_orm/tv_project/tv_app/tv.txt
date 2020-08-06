@@ -1,0 +1,5 @@
+Show.objects.create(title = 'Stranger Things')
+Show.objects.create(title = 'Brooklyn Nine-Nine')
+Show.objects.create(title = 'Game of Thrones')
+Show.objects.create(title = 'Pushing Daisies')
+Show.objects.create(title = 'Parks and Recreation')

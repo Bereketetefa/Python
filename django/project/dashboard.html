@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Page</title>
+    <style>
+        body {
+        background-image: radial-gradient(#023036,#0abada);
+        }
+
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(4, 32, 48);
+        border-radius: 150px;
+        }
+
+        li {
+        float: left;
+        border-right:1px solid #bbb;
+        }
+
+        li:last-child {
+        border-right: none;
+        }
+
+        h3{
+        text-align: center;
+        }
+
+        li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+        background-color: #111;
+        }
+
+        button{
+        border-radius: 15px;
+        background: ghostwhite;
+        padding: auto; 
+        width: auto;
+        height: auto; 
+        margin-top: 10px;
+        height: 30px;
+        }
+
+        form{
+        width: 10px;
+        margin-bottom: auto;
+        margin-left: auto;
+        }
+
+        .active {
+        }
+
+        img{
+        width: 249px;
+        height: 165.695px;
+        border-radius: 20px;
+        }
+
+        div.doggie{
+        width: 422px;
+        height: 550px;
+        margin: 20px 0 0 20px;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 0px;
+        }
+
+        .add{
+        /* position: absolute; */
+        width: 50%;
+        bottom: 10px;
+        /* border: 3px solid rgba(0, 9, 12, 0.301); */
+        }
+
+        form{
+        margin-left: 300px;
+        height: 0px;
+        }
+
+        footer {
+        background-color: rgb(4, 32, 48);
+        padding: 10px;
+        text-align: center;
+        color: white;
+        }
+        video{
+        width: 249px;
+        height: 165.695px;
+        border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="navbar">
+            <ul>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#breed">Breed</a></li>
+                <li style="float:right"><a class="active" href="#about">About</a>
+                </li>
+            </ul>
+        </p>    
+    </div>
+    <h3>The dogs you would like to foster</h3>
+    <div class="doggie">
+            <tr>
+                <td>
+                    <form action="/addfavorite" method='post'>
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button>
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                    </form>
+                    <img src="dog_images/download(1).jpg">
+                    <form action="/addfavorite" method='post'>
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button>
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                    </form>
+                    <img src="dog_images/download (2).jpg">
+                    <form action="/addfavorite" method='post'>
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button>
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                        <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                    </form>
+                    <img src="dog_images/download (3).jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="doggie">
+            <tr>
+                <td>
+                        <form action="/addfavorite" method='post'>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                        </form>
+                    <img src="dog_images/download(4).jpg">
+                        <form action="/addfavorite" method='post'>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                        </form>
+                    <img src="dog_images/download(5).jpg">
+                        <form action="/addfavorite" method='post'>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                        </form>
+                    <img src="dog_images/download(6).jpg">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="doggie">
+            <tr>
+                <td>   
+                        <form action="/addfavorite" method='post'>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                        </form>
+                    <img src="dog_images/download(7).jpg">
+                        <form action="/addfavorite" method='post'>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                        </form>
+                    <img src="dog_images/download(8).jpg">
+                        <form action="/addfavorite" method='post'>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">name</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Breed</button>
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Age</button> 
+                            <button class="button" name ='post_id' value="{{post.id}}" type="submit">Location</button> 
+                        </form>
+                    <img src="dog_images/download(9).jpg">
+                </td>
+            </tr>
+        </table>
+    </div>   
+    <div>
+        <footer>
+            <table class="add">
+                <tr>
+                    <td>
+                        <video width="400" controls>
+                            <source src="mov_bbb.mp4" type="video/mp4">
+                            <source src="mov_bbb.ogg" type="video/ogg">
+                            Your browser does not support HTML video.
+                        </video>
+                        
+                        <p>
+                        Video courtesy of 
+                        <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
+                        </p>
+                        <!-- <h3>Would you like to have your dog fostered?</h3>
+                        <h4>Please fill out the following information</h4>
+                            <form action="" method="post">
+                                <p>Pet Name:<input type="text" name="petname" id=""></p>
+                                <p>Breed <input type="text" name="breed" id=""></p>
+                                <p>Age<input type="text" name="age" id=""></p> -->
+                                <!-- make the discription box bigger -->
+                                <!-- <p>Description<input type="text" name="description" id=""></p>
+                                <p>City:<input type="text" name="city" id=""></p>
+                                <input type="submit" value="Submit">
+                            </form> -->
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </div>
+</body>
+</html>

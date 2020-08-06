@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books/Authors</title>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a Book</h1>
+    <form action= '/createBook' method='post'>
+        {% csrf_token %}
+        <p>Title: <input type="text" Name="b_Name" id="" ></p>
+        <p>Description: <textarea  Name= 'desc' id='' cols="30" rows="10"textarea></textarea></p>
+        <p><input type="submit" value="add"></p>
+    </form>
+
+    <table>
+    <tr>    
+        <th>ID</th>
+        <th>Book Title</th>
+        <th>action</th>
+    </tr>
+    {% for bookObj in allbooks %}
+    <tr>
+        <td>{{bookObj.id}}</td>
+        <td>{{bookObj.title}}</td>
+        <td><a href="/courses/{{bookObj.id}}/">View</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    <form action="/createshow" method="post">
+        {% csrf_token %}
+        <p>First Name: <input type="text" name="nah" id="" required></p>
+        <p><input type="submit" value="Create New Fan"></p>
+    
+    
+    </form>
+</body>
+</html>

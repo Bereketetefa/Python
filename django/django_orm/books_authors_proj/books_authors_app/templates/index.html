@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books/Authors</title>
+    <style>
+        table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        }
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a Book</h1>
+
+    <form action="" methods= >
+        {% csrf_token %}
+        <p>Titla: <input type="text">  </p>
+        <p>Description: <textarea  Name= '' id='' cols="" rows=""textarea></textarea></p>
+        <!-- <p>Number of Credits <input type="" name=""  id=""></p> -->
+        <p><input type="submit" value="add"></p>
+
+    </form>
+
+    <table>
+    <tr>    
+        <th>ID</th>
+        <th>Course Name</th>
+        <th>action</th>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td><a href="">View</a></td>
+    </tr>
+    </table>
+</body>
+</html>
